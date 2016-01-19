@@ -1,0 +1,141 @@
+{% extends 'discussion_base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body %}
+     {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+
+    {% endfor %}
+</ul>
+{% endif %}
+    <div class="create_form">
+    <form action="{% url 'discussion_create' %}" method="post">
+    {% csrf_token %}
+    {{ form.media }}
+    <p><label>{{ form.title.label }}</label>{{ form.title }}</p>
+    <p><label>{{ form.category.label }}</label></p>
+        {{ form.category }}
+    <a href='#' class="add_category" id="add_category"><i class="fa fa-plus"></i></a>
+        <div class="add_category_form" id="add_category_form">
+            <label for="new_category"></label><input id ="new_category" name="category_new" value="" />
+        <button type="button" id="category_form_submit">{% trans 'add' %}</button>
+            </div>
+    <p style="margin-top: 5%;"><label>{% trans 'content' %}</label>{{ form.content }}</p>
+    <div class="allow_department">
+    <span data-department="-1" class="department_span">{% trans 'all' %}</span>
+    {% for i in request.user.get_all_department %}
+    <span data-department="{{ i.id }}" class="department_span">{{ i.name }}</span>
+        {% endfor %}
+    </div>
+    <div class="allow_user">
+    <ul>
+        {% for i in request.user.get_users_except_self %}
+            <li>
+    {% if i.get_first_department.id %}
+    <label data-group="{{ i.get_first_department.id }}" for="allow_user_{{ i.id }}">
+    <input id="allow_user_{{ i.id }}" type="checkbox" name="allow_user" value="{{ i.id }}">{{ i.name }}</label>
+    {% else %}
+    <label data-group="0" for="allow_user_{{ i.id }}">
+        <input id="allow_user_{{ i.id }}" type="checkbox" name="allow_user" value="{{ i.id }}" >{{ i.name }}</label>
+    {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+    <button class="button" type="submit">{% trans 'submit' %}</button>
+    </form>
+    </div>
+{% endblock %}
+{% block script %}
+<script>
+    $(".allow_department span").click(function(){
+    var department_id = parseInt($(this).attr("data-department"));
+    if ($(this).hasClass("selected")){
+        $(this).removeClass("selected");
+        if (department_id==-1){
+         $(".allow_department span").slice(1).click();
+         $(".allow_user").find("input").removeAttr("checked", "checked").prop("checked",false);
+        }
+        else{
+         $(".allow_user").find("[data-group$="+department_id+"]").find("input").removeAttr("checked", "checked").prop("checked",false);
+        }
+
+        }
+    else{
+        //$(this).addClass("selected");
+        if (department_id==-1){
+         $(".allow_department span").addClass("selected");
+         $(".allow_user").find("input").attr("checked", "checked").prop("checked",true);
+        }
+        else{
+         $(this).addClass("selected");
+         $(".allow_user").find("[data-group$="+department_id+"]").find("input").attr("checked", "checked").prop("checked",true);
+        }
+    }
+
+  });
+
+    $(".allow_user").find("input").click(function(){
+        if ($(this).prop("checked")) {
+            var department_id = $(this).parent().attr("data-group");
+            var select_ele = "label[data-group="+department_id+"]";
+            var group_length = $(select_ele).length;
+            var check_length = $(select_ele).find("input:checked").length;
+            var all_checked_length = $(".allow_user label input:checked").length;
+            var all_length = $(".allow_user label input").length;
+            if(group_length==check_length){
+                $("span[data-department="+department_id+"]").addClass("selected");
+            }
+            if (all_length==all_checked_length){
+                $("span[data-department='-1']").addClass("selected");
+            }
+        }
+        else{
+            var department_id_1 = $(this).parent().attr("data-group");
+            var select_ele_1 = "label[data-group="+department_id_1+"]";
+            $(select_ele_1).removeClass("selected");
+            $("span[data-department='-1']").removeClass("selected");
+        }
+    })
+</script>
+
+<script>
+$("#add_category").click(function()
+{
+    $("#add_category_form").addClass("add_category_show");
+});
+
+$("#category_form_submit").click(function(){
+
+    var category_name = $("#new_category").val();
+    if (category_name.length>0){
+                $.ajax({
+                    type:"GET",
+                    url:"{% url 'category_create' %}",
+                    data:{'category':category_name},
+                    dataType:'json',
+                    success: function(data) {
+                        var category_id = data[0].pk;
+                        var category_name = data[0].fields.name;
+                        var category_string = '<li><label for="id_category_{category_id}"><input id="id_category_{category_id}" name="category" type="checkbox" value="{category_id}">{category_name}</label></li>';
+                        var category_li = category_string.replace('{category_id}', category_id).replace('{category_id}', category_id).replace('{category_id}', category_id).replace('{category_name}', category_name);
+                        //console.log(category_li);
+                        $("#id_category").append(category_li);
+                        $("#add_category_form").removeClass("add_category_show");
+                    },
+                    error:function(msg) {
+                        $("#id_category_"+(parseInt((msg.responseText))-1).toString()).prop("checked",true);
+                        $("#add_category_form").removeClass("add_category_show");
+                    }
+                });
+
+    }
+    else {
+        alert("{% trans 'category name is not null' %}");
+    }
+})
+
+</script>
+{% endblock %}

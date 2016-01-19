@@ -1,0 +1,23 @@
+{% extends 'discussion_base.html' %}
+{% load i18n %}
+{% block body %}
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <form action="{% url 'account_detail' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="account_form">
+    <label for="id_email">{% trans 'email' %}:{{ userform.email }}</label>
+    <label for="id_image">{% trans 'current_user_image' %}:<img src="{{ current_image }}">
+        <input id="id_user_image" name="user_image" type="file"></label>
+    <label for="id_phone_number">{% trans 'phone_number' %}:{{ userform.phone_number }}</label>
+    <label for="id_password1">{% trans 'change_password' %}:{{ userform.password1 }}</label>
+     <label for="id_password2">{% trans 'change_password_again' %}:{{ userform.password2 }}</label>
+     <button>{% trans 'change save' %}</button>
+    </div>
+    </form>
+{% endblock %}

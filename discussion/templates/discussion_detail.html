@@ -1,0 +1,67 @@
+{% extends 'discussion_base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body %}
+    <a href="#" class="cd-top">Top</a>
+    <article>
+    <h1 class="article_title">{{ post.title }}</h1>
+    <p class="article_category">{%  if post.category.all %}
+        {%  for i in post.category.all %}
+        <a href="{% url 'discussion_list' %}?category={{ i.name }}"><span>{{ i.name }}</span></a>
+        {% endfor %}
+    {% else %}<span>{% trans 'no category' %}</span>{% endif %}
+    </p>
+    <strong class="article_author">{{ post.author.name }}</strong>
+    <span class="article_date">{{ post.created }}</span>
+    <div class="article_content">
+        {{ post.content|safe }}
+    </div>
+    </article>
+
+    <div class="comment_area">
+        {% for i in post.comments_set.all %}
+    <div class="comment_detail">
+<div class="comment_user">
+   {% if i.user.user_image %}
+        <img class="comment_user_image" src="{{ i.user.user_image.url }}">
+        {% else %}
+        <img class="comment_user_image" src="/media/default.png">
+        {% endif %}
+            <p class="comment_username">{{ i.user.name }}</p>
+            <p class="comment_date">{{ i.created|date:"y-m-d H:s:i" }}</p>
+        </div>
+    <div class="dialogbox">
+    <div class="body">
+        <span class="tip tip-left"></span>
+      <div class="message">
+        <span>{{ i.content|safe }}</span>
+      </div>
+    </div>
+  </div>
+    </div>
+    {% endfor %}
+    </div>
+    <div class="comment_editor">
+     {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <form action="{% url 'comment_post' %}" method="post">
+        {% csrf_token %}
+    <p class="comment_area">{% trans 'New Comment' %}:</p>
+    <input type="text" name="post_id" value="{{ post.id }}" hidden="hidden" readonly="readonly" />
+    {{ conmentform.media }}
+    {{ conmentform.content }}
+    <button type="submit" class="button">{% trans 'submit' %}</button>
+        </form>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script src="{% static 'discussion/js/back_to_top.js' %}" type="text/javascript">
+
+    </script>
+{% endblock %}

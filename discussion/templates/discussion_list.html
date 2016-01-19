@@ -1,0 +1,30 @@
+{% extends 'discussion_base.html' %}
+{% load i18n %}
+{% block body %}
+
+    {%  for i in post_list %}
+    <div class="rows">
+			<div class="row">
+                <div class="row-title">
+                        <a class="row-link" href="{{ i.get_absolute_url }}">{{ i.title }}</a>
+                </div>
+                <div class="row-info">
+                    <div>
+                        {% for k in  i.category.all %}
+                                <a href="?category={{ k.name }}">{{ k.name }}</a>
+                        {% endfor %}
+                    </div>
+                 <div><i class="fa fa-comment"></i>{{ i.comments_set.all|length }}</div>
+                 <div><i class="fa fa-clock-o"></i> {{ i.created }}</div>
+                </div>
+			</div>
+		</div>
+    {% endfor %}
+    {% if page_obj.has_previous or page_obj.has_next %}
+                <div class="page_style">
+                    {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">{% endif %}&laquo; {% trans 'preview' %}{% if page_obj.has_previous %}</a>{% endif %}
+                    |
+                    {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">{% endif %}{% trans 'next' %} &raquo;{% if page_obj.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+{%  endblock %}

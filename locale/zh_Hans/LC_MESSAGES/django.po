@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-19 13:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Jeasyoa/settings.py:114
+msgid "English"
+msgstr "英文"
+
+#: Jeasyoa/settings.py:115
+msgid "Simplified Chinese"
+msgstr "中文"
+
+#: account/admin.py:119
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s 对象主键%(key)r 不存在"
+
+#: account/admin.py:129
+msgid "Password changed successfully."
+msgstr "密码修改成功"
+
+#: account/admin.py:140
+#, python-format
+msgid "Change password: %s"
+msgstr "修改密码为: %s"
+
+#: account/forms.py:28
+msgid "The two password fields didn't match."
+msgstr "密码不匹配"
+
+#: account/forms.py:30 account/forms.py:57 account/forms.py:92
+msgid "Password"
+msgstr "密码"
+
+#: account/forms.py:31 account/forms.py:93
+msgid "Password confirmation"
+msgstr "重复一次密码"
+
+#: account/forms.py:32 account/forms.py:94
+msgid "Enter the same password as above, for verification."
+msgstr "输入相同的密码认证"
+
+#: account/forms.py:58
+msgid ""
+"Raw passwords are not stored, so there is no way to "
+"see                                                      this user's "
+"password, but you can change the "
+"password                                                      using <a href="
+"\"password/\">this form</a>."
+msgstr ""
+"你不能通过这个表单修改密码,可以点击以下<a href=\"password/\">链接</a>.修改密"
+"码"
+
+#: account/models.py:20 account/models.py:47 discussion/models.py:10
+msgid "name"
+msgstr "名称"
+
+#: account/models.py:21
+msgid "Content_type"
+msgstr "内容类型"
+
+#: account/models.py:22
+msgid "codename"
+msgstr "代码编号"
+
+#: account/models.py:23
+msgid "show in front end"
+msgstr "是否在前端展示"
+
+#: account/models.py:27
+msgid "Access permission"
+msgstr "访问权限"
+
+#: account/models.py:28
+msgid "Access permissions"
+msgstr "访问权限"
+
+#: account/models.py:49
+msgid "Permissions"
+msgstr "权限"
+
+#: account/models.py:54 account/models.py:128
+msgid "Department"
+msgstr "部门"
+
+#: account/models.py:55
+msgid "Departments"
+msgstr "部门"
+
+#: account/models.py:69
+msgid "email is required"
+msgstr "邮箱不能为空"
+
+#: account/models.py:70
+msgid "please input a valid email"
+msgstr "请输入一个合法的邮箱"
+
+#: account/models.py:125
+msgid "superuser status"
+msgstr "管理员状态"
+
+#: account/models.py:126
+msgid ""
+"Designates that this user has all permissions without explicitly assigning "
+"them."
+msgstr "指定该用户拥有的所有权限没有明确分配他们"
+
+#: account/models.py:129
+msgid ""
+"The departments this user belongs to. A user will get all permissions "
+"granted to each of their departments."
+msgstr "用户所属的部门,他包含该部门的所有权限,他拥有所在的部门的所有权限"
+
+#: account/models.py:134
+msgid "User permissions"
+msgstr "用户权限"
+
+#: account/models.py:135
+msgid "Specific permissions for this user."
+msgstr "用户的特殊权限"
+
+#: account/models.py:177 account/templates/login.html:28
+msgid "Email"
+msgstr "电子邮箱"
+
+#: account/models.py:180
+msgid "Name"
+msgstr "名称"
+
+#: account/models.py:183 account/templates/login.html:28
+msgid "Phone_number"
+msgstr "电话号码"
+
+#: account/models.py:184
+msgid "Date_of_birth"
+msgstr "出生日期"
+
+#: account/models.py:185
+msgid "is_active"
+msgstr "能否登录到后台"
+
+#: account/models.py:186
+msgid "is_admin"
+msgstr "管理员"
+
+#: account/models.py:187
+msgid "User_photo"
+msgstr "头像"
+
+#: account/models.py:190 discussion/models.py:11 discussion/models.py:28
+#: discussion/models.py:51
+msgid "created"
+msgstr "创建时间"
+
+#: account/models.py:191
+msgid "updated"
+msgstr "更新时间"
+
+#: account/models.py:197
+msgid "Account"
+msgstr "帐户"
+
+#: account/models.py:198
+msgid "Accounts"
+msgstr "帐户"
+
+#: account/models.py:233
+msgid "user_photo"
+msgstr "头像"
+
+#: account/templates/login.html:7
+msgid "login"
+msgstr "登录"
+
+#: account/templates/login.html:32
+#, fuzzy
+#| msgid "Password"
+msgid "password"
+msgstr "密码"
+
+#: account/templates/login.html:35
+msgid "Login"
+msgstr "登录"
+
+#: account/templates/user_info.html:14
+#, fuzzy
+#| msgid "Email"
+msgid "email"
+msgstr "电子邮箱"
+
+#: account/templates/user_info.html:15
+msgid "current_user_image"
+msgstr "当前头像"
+
+#: account/templates/user_info.html:17
+#, fuzzy
+#| msgid "Phone_number"
+msgid "phone_number"
+msgstr "电话号码"
+
+#: account/templates/user_info.html:18
+#, fuzzy
+#| msgid "Change password: %s"
+msgid "change_password"
+msgstr "修改密码为: %s"
+
+#: account/templates/user_info.html:19
+#, fuzzy
+#| msgid "Change password: %s"
+msgid "change_password_again"
+msgstr "修改密码为: %s"
+
+#: account/templates/user_info.html:20
+msgid "change save"
+msgstr "保存修改"
+
+#: account/views.py:30
+#, fuzzy
+#| msgid "The two password fields didn't match."
+msgid "email or password is invalid."
+msgstr "邮箱与密码不匹配"
+
+#: account/views.py:48
+msgid "user_photo change success"
+msgstr "用户头像上传成功"
+
+#: account/views.py:53
+msgid "password change success"
+msgstr "修改密码成功"
+
+#: account/views.py:56 account/views.py:57
+msgid "password are not consistent"
+msgstr "密码不一致"
+
+#: account/views.py:61
+msgid "add phone_number success"
+msgstr "添加手机号码成功"
+
+#: discussion/mixin.py:16
+msgid "no permission"
+msgstr "没有权限"
+
+#: discussion/models.py:14
+msgid "Categorys"
+msgstr "分类"
+
+#: discussion/models.py:15 discussion/models.py:27
+msgid "Category"
+msgstr "分类"
+
+#: discussion/models.py:24
+msgid "title"
+msgstr "标题"
+
+#: discussion/models.py:26 discussion/models.py:52
+msgid "Author"
+msgstr "作者"
+
+#: discussion/models.py:29
+msgid "allow"
+msgstr "允许查看"
+
+#: discussion/models.py:32
+msgid "Posts"
+msgstr "文章"
+
+#: discussion/models.py:33 discussion/models.py:50
+msgid "Post"
+msgstr "文章"
+
+#: discussion/models.py:55
+msgid "Comments"
+msgstr "评论"
+
+#: discussion/models.py:56
+msgid "Comment"
+msgstr "评论"
+
+#: discussion/templates/comfirm_delete.html:5
+msgid "Are you sure you want to delete"
+msgstr "确定要删除"
+
+#: discussion/templates/comfirm_delete.html:6
+msgid "Confirm"
+msgstr "确认"
+
+#: discussion/templates/discussion_base.html:7
+msgid "disscussion"
+msgstr "讨论区"
+
+#: discussion/templates/discussion_base.html:17
+msgid "new discussion"
+msgstr "发起新讨论"
+
+#: discussion/templates/discussion_base.html:27
+msgid "personal setting"
+msgstr "个人设置"
+
+#: discussion/templates/discussion_base.html:28
+msgid "personal management interface"
+msgstr "个人管理界面"
+
+#: discussion/templates/discussion_base.html:29
+msgid "logout"
+msgstr "退出登录"
+
+#: discussion/templates/discussion_base.html:37
+msgid "search"
+msgstr "搜索"
+
+#: discussion/templates/discussion_detail.html:12
+#, fuzzy
+#| msgid "Category"
+msgid "no category"
+msgstr "未分类"
+
+#: discussion/templates/discussion_detail.html:54
+msgid "New Comment"
+msgstr "发表评论"
+
+#: discussion/templates/discussion_detail.html:58
+#: discussion/templates/discussion_new.html:47
+#: discussion/templates/discussion_update.html:48
+msgid "submit"
+msgstr "提交"
+
+#: discussion/templates/discussion_list.html:25
+#: discussion/templates/search/discussion_search.html:93
+msgid "preview"
+msgstr "上一页"
+
+#: discussion/templates/discussion_list.html:27
+#: discussion/templates/search/discussion_search.html:95
+msgid "next"
+msgstr "下一页"
+
+#: discussion/templates/discussion_new.html:23
+#: discussion/templates/discussion_update.html:23
+msgid "add"
+msgstr "添加"
+
+#: discussion/templates/discussion_new.html:25
+#: discussion/templates/discussion_update.html:25
+#, fuzzy
+#| msgid "Content_type"
+msgid "content"
+msgstr "内容类型"
+
+#: discussion/templates/discussion_new.html:27
+#: discussion/templates/discussion_update.html:27
+#, fuzzy
+#| msgid "allow"
+msgid "all"
+msgstr "允许查看"
+
+#: discussion/templates/discussion_new.html:136
+#: discussion/templates/discussion_update.html:137
+msgid "category name is not null"
+msgstr "分类名称不能为空"
+
+#: discussion/templates/personal_interface.html:6
+msgid "post at today"
+msgstr "今天发布数"
+
+#: discussion/templates/personal_interface.html:13
+msgid "You post nothing today"
+msgstr "今天没有提交内容"
+
+#: discussion/templates/personal_interface.html:17
+msgid "comment at today"
+msgstr "今天评论数"
+
+#: discussion/templates/personal_interface.html:26
+msgid "You comment nothing today"
+msgstr "今天没有评论"
+
+#: discussion/templates/search/discussion_search.html:61
+msgid "result as follow"
+msgstr "结果如下"
+
+#: discussion/templates/search/discussion_search.html:88
+msgid "no result"
+msgstr "没有查询到"
+
+#: discussion/views.py:69 discussion/views.py:127
+msgid "title is required"
+msgstr "标题不能为空"
+
+#: discussion/views.py:71 discussion/views.py:129
+msgid "content is required"
+msgstr "内容不能为空"
+
+#: discussion/views.py:186
+msgid "comment content is required"
+msgstr "评论不能为空"
+
+#, fuzzy
+#~| msgid "Phone_number"
+#~ msgid "email/phone_number"
+#~ msgstr "电子邮箱/电话号码"

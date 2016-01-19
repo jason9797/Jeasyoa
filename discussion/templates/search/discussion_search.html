@@ -1,0 +1,101 @@
+{% extends 'discussion_base.html' %}
+{% load i18n %}
+{%  block css %}
+    <style>
+.search_list{
+    display:block;
+}
+.result_style{
+    margin-left: 15%;
+    border-color: rgba(255, 255, 255, 0.1);
+/*    border-left-style: groove; */
+    border-bottom-style: groove;
+    margin-bottom: 5%;
+    margin-right: 15%;
+    width:70%;
+    }
+.result_date{
+    float:right;
+    font-size:xx-small;
+    margin-top: -3%;
+}
+.result_title{
+    text-align:center;
+    font-size: x-large;
+}
+.result_content{
+text-align: center;
+
+}
+.result_comment{
+    margin-bottom: 3%;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-bottom-style: groove;
+    overflow: hidden;
+{#    margin-bottom: 10px;#}
+}
+.comment_date{
+    font-size: xx-small;
+    font-family: cursive;
+}
+.comments_user{
+    font-family: cursive;
+    margin-bottom: 10px;
+}
+.comment_content{
+    margin-top: -3%;
+    position: relative;
+    float: right;
+    width: 80%;
+    height: auto;
+    /* background-color: #DADADA; */
+    border-radius: 3px;
+    /*border: 5px solid #ccc;*/
+
+}
+    </style>
+{% endblock %}
+{% load highlight %}
+{% block body %}
+        {% if query %}
+            <h3 class="search_result">{% trans 'result as follow' %}:</h3>
+             <ul id="post-list" class="search_list">
+            {% for result in object_list %}
+            <li class="result_style"
+                    {% if forloop.last %} style="border-bottom-style:dashed; border-bottom-color: white;" {% endif %}>
+                <p class="result_title"><a href="{{ result.object.get_absolute_url }}">{% highlight result.object.title with request.GET.q %}
+                    </a></p>
+                <span class="result_date">{{ result.object.created|date:'d, M Y' }}</span>
+                {% if request.GET.q in result.object.content %}
+                <p class="result_content">{% highlight result.object.content with request.GET.q %}</p>
+                {% else %}
+                 <p class="result_content">....</p>
+                {% endif %}
+                {% for i in result.object.comments_set.all %}
+                    {% if request.GET.q in i.content %}
+                        <div class="result_comment">
+                        <p class="comments_user">
+                            <span>{{ i.user.name }}</span>
+                        </p>
+                            <p class="comment_content">{% highlight i.content with request.GET.q %}</p>
+                             <span class="comment_date">{{ i.created|date:'Y-m-d H:s:i' }}</span>
+                        </div>
+                    {% endif %}
+                    {% endfor %}
+
+            </li>
+            {% empty %}
+                <p>{% trans 'no result' %}</p>
+            {% endfor %}
+            </ul>
+            {% if page_obj.has_previous or page_obj.has_next %}
+                <div class="page_style">
+                    {% if page_obj.has_previous %}<a href="?q={{ query }}&amp;page={{ page_obj.previous_page_number }}">{% endif %}&laquo; {% trans 'preview' %}{% if page_obj.has_previous %}</a>{% endif %}
+                    |
+                    {% if page_obj.has_next %}<a href="?q={{ query }}&amp;page={{ page_obj.next_page_number }}">{% endif %}{% trans 'next' %} &raquo;{% if page_obj.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+            {# Show some example queries to run, maybe query syntax, something else? #}
+        {% endif %}
+{% endblock %}

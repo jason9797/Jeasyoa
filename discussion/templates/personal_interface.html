@@ -1,0 +1,30 @@
+{% extends 'discussion_base.html' %}
+{% load i18n %}
+{% block body %}
+    <div>
+    <div class="today_discussion">
+    <label class="today_label">{% trans 'post at today' %}:</label>
+    {% for i in discussions %}
+        <div>
+    <p><span>{{ forloop.counter }}.</span><a href="{% url 'discussion_update' i.id %}">{{ i.title }}</a></p>
+    <a href="{% url 'discussion_delete' i.pk %}"><i class="fa fa-times"></i></a>
+        </div>
+    {% empty %}
+    <p>{% trans 'You post nothing today' %}</p>
+    {% endfor %}
+    </div>
+    <div class="today_comment">
+    <label class="today_label">{% trans 'comment at today' %}:</label>
+    {% for i in comments %}
+        <div>
+    <div>
+    <span>{{ forloop.counter }}.</span>{{ i.content|safe }}
+        </div>
+    <a href="{% url 'comment_delete' i.pk %}"><i class="fa fa-times"></i></a>
+        </div>
+    {% empty %}
+    <p>{% trans 'You comment nothing today' %}</p>
+    {% endfor %}
+    </div>
+    </div>
+{% endblock %}

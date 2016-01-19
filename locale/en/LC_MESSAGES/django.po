@@ -1,0 +1,390 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-19 13:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Jeasyoa/settings.py:114
+msgid "English"
+msgstr ""
+
+#: Jeasyoa/settings.py:115
+msgid "Simplified Chinese"
+msgstr ""
+
+#: account/admin.py:119
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
+
+#: account/admin.py:129
+msgid "Password changed successfully."
+msgstr ""
+
+#: account/admin.py:140
+#, python-format
+msgid "Change password: %s"
+msgstr ""
+
+#: account/forms.py:28
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: account/forms.py:30 account/forms.py:57 account/forms.py:92
+msgid "Password"
+msgstr ""
+
+#: account/forms.py:31 account/forms.py:93
+msgid "Password confirmation"
+msgstr ""
+
+#: account/forms.py:32 account/forms.py:94
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: account/forms.py:58
+msgid ""
+"Raw passwords are not stored, so there is no way to "
+"see                                                      this user's "
+"password, but you can change the "
+"password                                                      using <a href="
+"\"password/\">this form</a>."
+msgstr ""
+
+#: account/models.py:20 account/models.py:47 discussion/models.py:10
+msgid "name"
+msgstr ""
+
+#: account/models.py:21
+msgid "Content_type"
+msgstr ""
+
+#: account/models.py:22
+msgid "codename"
+msgstr ""
+
+#: account/models.py:23
+msgid "show in front end"
+msgstr ""
+
+#: account/models.py:27
+msgid "Access permission"
+msgstr ""
+
+#: account/models.py:28
+msgid "Access permissions"
+msgstr ""
+
+#: account/models.py:49
+msgid "Permissions"
+msgstr ""
+
+#: account/models.py:54 account/models.py:128
+msgid "Department"
+msgstr ""
+
+#: account/models.py:55
+msgid "Departments"
+msgstr ""
+
+#: account/models.py:69
+msgid "email is required"
+msgstr ""
+
+#: account/models.py:70
+msgid "please input a valid email"
+msgstr ""
+
+#: account/models.py:125
+msgid "superuser status"
+msgstr ""
+
+#: account/models.py:126
+msgid ""
+"Designates that this user has all permissions without explicitly assigning "
+"them."
+msgstr ""
+
+#: account/models.py:129
+msgid ""
+"The departments this user belongs to. A user will get all permissions "
+"granted to each of their departments."
+msgstr ""
+
+#: account/models.py:134
+msgid "User permissions"
+msgstr ""
+
+#: account/models.py:135
+msgid "Specific permissions for this user."
+msgstr ""
+
+#: account/models.py:177 account/templates/login.html:28
+msgid "Email"
+msgstr ""
+
+#: account/models.py:180
+msgid "Name"
+msgstr ""
+
+#: account/models.py:183 account/templates/login.html:28
+msgid "Phone_number"
+msgstr ""
+
+#: account/models.py:184
+msgid "Date_of_birth"
+msgstr ""
+
+#: account/models.py:185
+msgid "is_active"
+msgstr ""
+
+#: account/models.py:186
+msgid "is_admin"
+msgstr ""
+
+#: account/models.py:187
+msgid "User_photo"
+msgstr ""
+
+#: account/models.py:190 discussion/models.py:11 discussion/models.py:28
+#: discussion/models.py:51
+msgid "created"
+msgstr ""
+
+#: account/models.py:191
+msgid "updated"
+msgstr ""
+
+#: account/models.py:197
+msgid "Account"
+msgstr ""
+
+#: account/models.py:198
+msgid "Accounts"
+msgstr ""
+
+#: account/models.py:233
+msgid "user_photo"
+msgstr ""
+
+#: account/templates/login.html:7
+msgid "login"
+msgstr ""
+
+#: account/templates/login.html:32
+msgid "password"
+msgstr ""
+
+#: account/templates/login.html:35
+msgid "Login"
+msgstr ""
+
+#: account/templates/user_info.html:14
+msgid "email"
+msgstr ""
+
+#: account/templates/user_info.html:15
+msgid "current_user_image"
+msgstr ""
+
+#: account/templates/user_info.html:17
+msgid "phone_number"
+msgstr ""
+
+#: account/templates/user_info.html:18
+msgid "change_password"
+msgstr ""
+
+#: account/templates/user_info.html:19
+msgid "change_password_again"
+msgstr ""
+
+#: account/templates/user_info.html:20
+msgid "change save"
+msgstr ""
+
+#: account/views.py:30
+msgid "email or password is invalid."
+msgstr ""
+
+#: account/views.py:48
+msgid "user_photo change success"
+msgstr ""
+
+#: account/views.py:53
+msgid "password change success"
+msgstr ""
+
+#: account/views.py:56 account/views.py:57
+msgid "password are not consistent"
+msgstr ""
+
+#: account/views.py:61
+msgid "add phone_number success"
+msgstr ""
+
+#: discussion/mixin.py:16
+msgid "no permission"
+msgstr ""
+
+#: discussion/models.py:14
+msgid "Categorys"
+msgstr ""
+
+#: discussion/models.py:15 discussion/models.py:27
+msgid "Category"
+msgstr ""
+
+#: discussion/models.py:24
+msgid "title"
+msgstr ""
+
+#: discussion/models.py:26 discussion/models.py:52
+msgid "Author"
+msgstr ""
+
+#: discussion/models.py:29
+msgid "allow"
+msgstr ""
+
+#: discussion/models.py:32
+msgid "Posts"
+msgstr ""
+
+#: discussion/models.py:33 discussion/models.py:50
+msgid "Post"
+msgstr ""
+
+#: discussion/models.py:55
+msgid "Comments"
+msgstr ""
+
+#: discussion/models.py:56
+msgid "Comment"
+msgstr ""
+
+#: discussion/templates/comfirm_delete.html:5
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: discussion/templates/comfirm_delete.html:6
+msgid "Confirm"
+msgstr ""
+
+#: discussion/templates/discussion_base.html:7
+msgid "disscussion"
+msgstr ""
+
+#: discussion/templates/discussion_base.html:17
+msgid "new discussion"
+msgstr ""
+
+#: discussion/templates/discussion_base.html:27
+msgid "personal setting"
+msgstr ""
+
+#: discussion/templates/discussion_base.html:28
+msgid "personal management interface"
+msgstr ""
+
+#: discussion/templates/discussion_base.html:29
+msgid "logout"
+msgstr ""
+
+#: discussion/templates/discussion_base.html:37
+msgid "search"
+msgstr ""
+
+#: discussion/templates/discussion_detail.html:12
+msgid "no category"
+msgstr ""
+
+#: discussion/templates/discussion_detail.html:54
+msgid "New Comment"
+msgstr ""
+
+#: discussion/templates/discussion_detail.html:58
+#: discussion/templates/discussion_new.html:47
+#: discussion/templates/discussion_update.html:48
+msgid "submit"
+msgstr ""
+
+#: discussion/templates/discussion_list.html:25
+#: discussion/templates/search/discussion_search.html:93
+msgid "preview"
+msgstr ""
+
+#: discussion/templates/discussion_list.html:27
+#: discussion/templates/search/discussion_search.html:95
+msgid "next"
+msgstr ""
+
+#: discussion/templates/discussion_new.html:23
+#: discussion/templates/discussion_update.html:23
+msgid "add"
+msgstr ""
+
+#: discussion/templates/discussion_new.html:25
+#: discussion/templates/discussion_update.html:25
+msgid "content"
+msgstr ""
+
+#: discussion/templates/discussion_new.html:27
+#: discussion/templates/discussion_update.html:27
+msgid "all"
+msgstr ""
+
+#: discussion/templates/discussion_new.html:136
+#: discussion/templates/discussion_update.html:137
+msgid "category name is not null"
+msgstr ""
+
+#: discussion/templates/personal_interface.html:6
+msgid "post at today"
+msgstr ""
+
+#: discussion/templates/personal_interface.html:13
+msgid "You post nothing today"
+msgstr ""
+
+#: discussion/templates/personal_interface.html:17
+msgid "comment at today"
+msgstr ""
+
+#: discussion/templates/personal_interface.html:26
+msgid "You comment nothing today"
+msgstr ""
+
+#: discussion/templates/search/discussion_search.html:61
+msgid "result as follow"
+msgstr ""
+
+#: discussion/templates/search/discussion_search.html:88
+msgid "no result"
+msgstr ""
+
+#: discussion/views.py:69 discussion/views.py:127
+msgid "title is required"
+msgstr ""
+
+#: discussion/views.py:71 discussion/views.py:129
+msgid "content is required"
+msgstr ""
+
+#: discussion/views.py:186
+msgid "comment content is required"
+msgstr ""
